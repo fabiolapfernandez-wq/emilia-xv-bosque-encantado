@@ -1,0 +1,18 @@
+EMILIA XV - VERSION 19 (CONFIRMACIONES SUPABASE)
+
+Este ZIP mantiene el diseño de V18 y reemplaza solo el RSVP de demostración.
+
+IMPORTANTE: requiere desplegar como proyecto Vercel con funciones serverless (GitHub o Vercel CLI); NO basta con arrastrar archivos estáticos a Vercel Drop.
+
+1) Sube el contenido descomprimido a un repositorio privado de GitHub y conecta ese repositorio al proyecto Vercel (directorio raíz). Framework: Other. No build command.
+2) En Vercel > Project Settings > Environment Variables, agrega:
+   SUPABASE_URL = URL de tu proyecto Supabase (Project Settings > API)
+   SUPABASE_SERVICE_ROLE_KEY = clave secreta service_role (Supabase API Keys)
+   Nunca compartas ni pongas esta clave en HTML, mensajes o enlaces.
+3) Vuelve a desplegar (Redeploy) para aplicar las variables.
+4) Prueba una invitación usando /?codigo=UUID de la tabla. No publiques una lista con códigos: son enlaces privados.
+5) Mantén RLS activado y SIN políticas de lectura/escritura públicas para invitaciones.
+6) Prueba un RSVP con 1 pase y comprueba estado_rsvp, pases_confirmados y fecha_confirmacion en Supabase.
+
+ATENCION: Este ZIP no incluye panel administrativo ni exportación de enlaces. Se pueden implementar después.
+NOTA: Los códigos de URL son credenciales de acceso por enlace. Cualquiera que tenga un enlace podrá cambiar esa confirmación; compártelos solo con cada familia.
